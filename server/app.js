@@ -13,7 +13,7 @@ require('dotenv').config();
 
 const routes = require("./routes/faqRoutes");
 
-const dbURI = "mongodb+srv://Sakyasekhar:sakyasekhar@chatapp.mlveze6.mongodb.net/?retryWrites=true&w=majority";
+const dbURI = process.env.MONGO_URL;
 
 // MongoDB connection
 //{ useNewUrlParser: true, useUnifiedTopology: true }

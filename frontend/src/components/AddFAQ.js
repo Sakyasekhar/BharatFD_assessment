@@ -19,7 +19,7 @@ const AddFAQ = ({ onFAQAdded }) => {
     });
 
     try {
-      await axios.post("http://localhost:3001/api/faq/add", { question, answer: sanitizedAnswer });
+      await axios.post("https://bharatfdassessment-server.up.railway.app/api/faq/add", { question, answer: sanitizedAnswer });
       setQuestion("");
       setAnswer("");
       onFAQAdded(); // Refresh FAQ list

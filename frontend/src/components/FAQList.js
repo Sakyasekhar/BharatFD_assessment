@@ -119,14 +119,18 @@ const FAQList = () => {
     const [editFaq, setEditFaq] = useState(null);
     const [editedQuestion, setEditedQuestion] = useState("");
     const [editedAnswer, setEditedAnswer] = useState("");
+    const [loading, setLoading] = useState(false); // Add loading state
   
     useEffect(() => {
       const fetchFaqs = async () => {
+        setLoading(true); // Set loading to true before starting the fetch
         try {
-          const res = await axios.get(`http://localhost:3001/api/faqs/?lang=${selectedLang}`);
+          const res = await axios.get(`https://bharatfdassessment-server.up.railway.app/api/faqs/?lang=${selectedLang}`);
           setFaqs(res.data);
         } catch (error) {
           console.error("Error fetching FAQs:", error);
+        } finally {
+          setLoading(false); // Set loading to false after fetch is complete
         }
       };
   
@@ -136,7 +140,7 @@ const FAQList = () => {
     const handleUpdate = async (id) => {
       try {
         console.log(id);
-        await axios.put(`http://localhost:3001/api/faq/update/${id}`, {
+        await axios.put(`https://bharatfdassessment-server.up.railway.app/api/faq/update/${id}`, {
           question: editedQuestion,
           answer: editedAnswer,
         });
@@ -150,7 +154,7 @@ const FAQList = () => {
     const handleDelete = async (id) => {
       try {
         console.log(id);
-        await axios.delete(`http://localhost:3001/api/faq/delete/${id}`);
+        await axios.delete(`https://bharatfdassessment-server.up.railway.app/api/faq/delete/${id}`);
         setFaqs(faqs.filter(faq => faq._id !== id));
       } catch (error) {
         console.error("Error deleting FAQ:", error);
@@ -172,7 +176,10 @@ const FAQList = () => {
             ))}
           </select>
         </div>
-        {faqs.length > 0 ? (
+  
+        {loading ? (  // Show loading message when fetching
+          <div className="text-center">Loading FAQs...</div>
+        ) : faqs.length > 0 ? (
           <ul className="space-y-3">
             {faqs.map((faq) => (
               <li key={faq._id} className="p-2 border-b">
