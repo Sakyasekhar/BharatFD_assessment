@@ -79,7 +79,7 @@ SERVER_URL = [bharatfdassessment-server.up.railway.app](https://bharatfdassessme
 ```
 
 ### 2. View Translated FAQs
-**GET** `/api/faqs?lang=fr`
+**GET** `/api/faqs/?lang=fr`
 #### Response:
 ```json
 [
