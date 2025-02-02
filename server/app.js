@@ -34,3 +34,5 @@ app.use("/api",routes);
 app.use((req, res) => {  //fires for every single request|| functions invocs only if express dont find any url matches above
     res.status(404).render('404', { title: '404' });
 });
+
+module.exports = app;
