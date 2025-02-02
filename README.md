@@ -1,5 +1,6 @@
 # BharatFD_assessment
 
+Deployment link: ["sakya-sekhar-bharatfd-assessment.vercel.app"](https://sakya-sekhar-bharatfd-assessment.vercel.app/)
 ## Project Overview
 This project is a FAQ management system that allows users to add, update, delete, and view FAQs in multiple languages. The system supports real-time translation caching using Redis and integrates Google Translate for dynamic translations.
 
@@ -50,7 +51,7 @@ Ensure you have the following installed:
    ```
 
 ## API Endpoints
-SERVER_URL = bharatfdassessment-server.up.railway.app
+SERVER_URL = [bharatfdassessment-server.up.railway.app](https://bharatfdassessment-server.up.railway.app)
 ### 1. Add an FAQ
 **POST** `/api/faq/add`
 #### Request Body:
@@ -126,18 +127,10 @@ SERVER_URL = bharatfdassessment-server.up.railway.app
 
 ## Deployment
 ### Backend
-Use Docker to run the backend:
-```sh
-docker build -t faq-backend .
-docker run -p 3001:3001 faq-backend
-```
+Deployed using railway
+
 ### Frontend
-Deploy using Vercel or Netlify:
-```sh
-npm run build
-npm install -g serve
-serve -s build
-```
+Deployed using vercel
 
 ## Contact
 For any issues, contact **sakya sekhar gangarapu** at **sakyasekhar.g@gmail.com**.
