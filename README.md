@@ -49,6 +49,11 @@ Ensure you have the following installed:
    cd frontend
    npm start
    ```
+6. To run unit tests
+   ```sh
+   cd server
+   npm test
+   ```
 
 ## API Endpoints
 SERVER_URL = [bharatfdassessment-server.up.railway.app](https://bharatfdassessment-server.up.railway.app)
